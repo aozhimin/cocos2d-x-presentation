@@ -73,7 +73,7 @@
                 <ul>
                     <li>利用已有的C++、Lua或者Javascript经验开发可以部署到各种桌面和移动平台上</li>
                     <li>用C++最佳实践替换掉了objective-c模式</li>
-                    <li>3.0以上使用了大量的STL和C++11版的特性，如auto关键字、闭包(Lambda表达式)</li>
+                    <li>3.0以上使用了大量的STL和C++11的特性，如auto关键字、闭包(Lambda表达式)</li>
                     <li>不能部署到浏览器中</li>
                 </ul>
             </div>
@@ -92,6 +92,7 @@
                     <li>全面支持桌面、移动和Web平台</li>
                 </ul>
             </div>
+            
 
             <div class="step" data-x="2500" data-y="1500" data-rotate="90">
                 <h1>CocoStudio</h1>
@@ -103,8 +104,23 @@
                     <li>数据编辑器</li>
                 </ul>
             </div>
+            
+                        <div class="step" data-x="2500" data-y="2500" data-rotate="90">
+                <h1>Cocos API风格</h1>
+                <ul>
+                    <li>二阶段构造器及静态create()函数</li>
+                    <li>doSomething()</li>
+                    <li>onEventCallback()</li>
+                    <li>getInstance()</li>
+                    <li>Property：setProperty()，getProperty()，isProperty()</li>
+                </ul>
+            </div>
 
-            <div class="step" data-x="1400" data-y="1600" data-rotate="180">
+            
+            
+
+
+			<div class="step" data-x="1400" data-y="1600" data-rotate-x="30" data-rotate-y="-30" data-rotate-z="90">
                 <img src="images/overview.png" alt=""/>
             </div>
 
@@ -120,17 +136,133 @@
                 <img src="images/structure.png" alt=""/>
             </div>
 
-            <div class="step" data-x="-3000" data-y="1000" data-rotate="270">
+            <div class="step" data-x="-3000" data-y="1600" data-z="1000" data-rotate="270" data-rotate-y="90" data-scale-x="0.5">
                 <h1>坐标系</h1>
                 <ul>
-                    <li>UI坐标系</li>
-                    <li>Direct3D使用左手笛卡尔坐标系</li>
-                    <li>Cocos2d使用与OpenGL相同的右手笛卡尔坐标系</li>
+                    <li>屏幕坐标系和Cocos2d坐标系</li>
+                    <li>世界坐标系(World Coordinate) VS 本地坐标系（Node Local)</li>
+                    <li>锚点（Anchor Point）</li>
                 </ul>
-                <img src="images/ui-coordinate-system.jpeg" alt=""/>
-                <img src="images/left-right-handed-cartesian.png" alt=""/>
+            </div>
+            
+            
+            <div class="step" data-x="-3000" data-y="600" data-rotate="270">
+	            
+	                <div id="left" style="width:250px;height:600px;float:left;">
+                <img src="images/UICoordinate.png" alt=""/>
+	                </div>
+    <div id="right" style="width:400px;height:600px;float:right;">
+	                    <p style="font-size: 25px;">
+		                    标准屏幕坐标系使用和OpenGL不同的坐标系，而Cocos2d则使用和OpenGL相同的坐标系。
+iOS, Android, Windows Phone等在开发应用时使用的是标准屏幕坐标系，原点为屏幕左上角，x向右，y向下。
+Cocos2d坐标系和OpenGL坐标系一样，原点为屏幕左下角，x向右，y向上。
+</p>
+    </div>
             </div>
 
+            
+ <div class="step" data-x="-3000" data-y="-400" data-rotate="270">
+	            <div style="text-align:center">
+		            <img style="width: 600px" src="images/anchorPoint.png" alt=""/>
+	            </div>
+
+             
+             <p style="background-color: rgba(238, 238, 238, 1);font-size: 25px;padding: 15px 40px 15px 40px;border-radius: 10px"> 
+	            auto red = LayerColor::create(Color4B(255, 100, 100, 128), visibleSize.width/2, visibleSize.height/2);</br>
+				auto green = LayerColor::create(Color4B(100, 255, 100, 128), visibleSize.width/4, visibleSize.height/4);</br>
+				red->addChild(green);</br>
+				this->addChild(red, 0);</br>
+			</p>
+
+            </div>
+          
+            
+             <div class="step" data-x="-3000" data-y="-1400" data-rotate="270">
+	            <div style="text-align:center">
+					<img style="width: 600px" src="images/anchorPoint2.png" alt=""/>
+	            </div>
+             <p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px"> 
+				auto red = LayerColor::create(Color4B(255, 100, 100, 128), visibleSize.width/2, visibleSize.height/2);</br>
+				red->ignoreAnchorPointForPosition(false);</br>
+				red->setAnchorPoint(Point(0.5, 0.5));</br>
+				red->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));</br>
+				</br>
+				auto green = LayerColor::create(Color4B(100, 255, 100, 128), visibleSize.width/4, visibleSize.height/4);</br>
+				green->ignoreAnchorPointForPosition(false);</br>
+				green->setAnchorPoint(Point(1, 1));</br>
+				red->addChild(green);</br>
+				</br>
+				this->addChild(red, 0);</br>
+			</p>
+
+            </div>
+            
+            <div class="step" data-x="-3000" data-y="-2400" data-rotate="270">
+	            <div style="text-align:center">
+					<img style="width: 600px" src="images/ignore.png" alt=""/>
+	            </div>
+             <p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px"> 
+				auto red = LayerColor::create(Color4B(255, 100, 100, 128), visibleSize.width/2, visibleSize.height/2);</br>
+				red->ignoreAnchorPointForPosition(true);</br>
+				red->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));</br>
+				</br>
+				auto green = LayerColor::create(Color4B(100, 255, 100, 128), visibleSize.width/4,</br>visibleSize.height/4);
+				green->ignoreAnchorPointForPosition(true);</br>
+				red->addChild(green);</br>
+				this->addChild(red, 0);</br>
+			</p>
+
+            </div>
+            
+            
+            <div class="step" data-x="-4100" data-y="-2500" data-z="1000" data-rotate="180">
+                <h1 >内存管理-绕不过去的坎</h1>
+                <ul>
+                    <li>Reference Count Management</li>
+                    <li>Ref,AutoreleasePool,PoolManager</li>
+                    <li>Retain,Release,Autorelease</li>
+                    <li>CREATE_FUNC</li>
+                    <li>new和autorelease, retain和release成对</li>
+
+                </ul>
+
+            </div>
+            
+            
+            <div id="its-in-3d" class="step" data-x="-5100" data-y="-2500" data-z="1000" data-rotate="180">
+                <h1 >内存管理－几个错误案例</h1>
+                <p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
+					auto obj = Scene::create();</br>
+					obj->autorelease(); // Error
+				</p>
+				<p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
+					auto obj = Scene::create();</br>
+					obj->release(); // Error
+				</p>
+				<p style="color: red; text-align: center; margin-top:20px;">
+					<span class="its">正确</span> <span class="in">做</span> <b>法
+				</p>
+
+				<p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
+					auto obj = Scene::create(); // 这里retain和release对应，release一个已经被autorelease过的对象（例如通过create函数构造的对象）必须先retain</br>
+					obj->retain();</br>
+					obj->release();
+				</p>
+
+            </div>
+            
+            
+
+            
+            
+            <!--
+                <img src="images/anchorPoint2.png" alt=""/>
+                <img src="images/ignore.png" alt=""/>
+-->
+            
+            
+
+<!--
             <div class="step" data-x="-3000" data-y="0" data-rotate="270">
                 <h1>Plugin-X</h1>
                 <p>易于集成第三方SDK:</p>
@@ -153,9 +285,11 @@
                     <li>TexturePacker</li>
                 </ul>
             </div>
+-->
 
             <div id="overview" class="step" data-x="0" data-y="0" data-scale="10">
             </div>
+
         </div>
 <!--
         <div class="hint">
