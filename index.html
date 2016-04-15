@@ -259,12 +259,6 @@ Cocos2d坐标系和OpenGL坐标系一样，原点为屏幕左下角，x向右，
 					<li>动态物体(dynamic)，可以受力，可以碰撞，可以移动</li>
                     <li>静态物体(static)，不可以受力，不能移动，参与碰撞</li>
                     <li>运动学物体(kinematic)，不可以受力，但是可以移动，可以参与碰撞</li>
-<!--
-                    <li> Chipmunk & Box2D</li>
-                    <li>Retain,Release,Autorelease</li>
-                    <li>CREATE_FUNC</li>
-                    <li>new和autorelease, retain和release成对</li>
--->
                 <ul>
 				<h2 style="font-size: 30px; margin-top: 20px;">物体的属性</h2>
 				<p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
@@ -272,6 +266,76 @@ Cocos2d坐标系和OpenGL坐标系一样，原点为屏幕左下角，x向右，
 				</p>
             </div>
             
+            
+            
+            <div class="step" data-x="1000" data-y="-2500" data-z="1000" data-rotate="0">
+	            <h1 style="margin-bottom: 15px;">Box2D && Chipmunk</h1>
+				<h2 style="font-size: 30px; margin-bottom: 5px;">搭建物理世界的步骤</h2>
+				<p style="font-size: 20px;">以box2d为例</p>
+				<img style="width: 800px" src="images/phyworld.png" alt=""/>
+				<img style="width: 800px" src="images/box2d.png" alt=""/>
+            </div>
+            
+            <div class="step" data-x="2000" data-y="-2500" data-z="1000" data-rotate="0">
+	            <h1 style="margin-bottom: 15px;">Chipmunk</h1>
+				<img style="width: 800px" src="images/chipmunk.png" alt=""/>
+
+            </div>
+            
+            <div class="step" data-x="3000" data-y="-2000" data-z="1000" data-rotate="60">
+	            <h1 style="margin-bottom: 15px;">内置物理引擎 Chipmunk</h1>
+            </div>
+            
+            <div class="step" data-x="3500" data-y="-1000" data-z="1000" data-rotate="90">
+	            <h1 style="margin-bottom: 15px;">粒子系统</h1>
+	                            				<p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
+粒子系统最早出现在80年代，主要用于解决由大量按一定规则运动（变化）的微小物质在计算机上的生成和显示问题。Particle System的应用非常广泛，大的可以模拟原子弹爆炸，星云变化，小的可以模拟水波、火焰、烟火、云雾等，而这些自然现象用常规的图形算法是很难逼真再现的。
+				</p>
+				
+					                            				<p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
+						                            				
+						                            				
+            Coordinate（坐标）<br/>
+            在烟火爆炸的时刻，每个粒子都有一个相同的初始坐标，随着时间的推移，粒子的新坐标将由它的旧坐标和加速度来求得<br/>
+            Velocity（速度）每个粒子都有一个随机产生的初始速度，粒子的新速度由加速度和空气阻尼来求得<br/>
+            Acceleration（加速度）在烟火中，每个粒子的加速度都等于重力加速度<br/>
+            Color（颜色）粒子颜色取决于粒子的速度或生命值的大小<br/>
+            Life（生命值）每个粒子都有一个初始的随机生命值，这个值将随着时间的推移而逐渐减小，直到等于0<br/>
+				</p>
+				
+				
+            </div>
+            
+                 <div class="step" data-x="3500" data-y="0" data-z="1000" data-rotate="90">
+	                 
+	                 
+	                 
+	                       	<h2 style="font-size: 30px; margin-bottom: 5px;">粒子系统的生命周期</h2>
+	                       								<img  src="images/parlife.png" alt=""/>
+					                       	<h2 style="font-size: 30px; margin-bottom: 5px;">粒子系统相关属性</h2>
+
+					                            				<p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
+						       最大粒子数，生命值，浮动值，初始大小，终止大小，发射角度，起始旋转角度，终止旋转角度。                     				
+
+				</p>	
+				<h2 style="font-size: 30px; margin-bottom: 5px;">发射器</h2>
+			<p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
+				重力发射器，放射发射器
+
+				</p>
+
+            </div>
+
+				
+				
+            <div class="step" data-x="3500" data-y="1000" data-z="1000" data-rotate="90">
+									<span class="its" style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q</span> <span class="in">&&</span> <b>A
+
+            </div>
+            
+            
+       
+
             
 
             
