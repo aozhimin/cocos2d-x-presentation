@@ -48,7 +48,7 @@
                 <q>Cocos2d-x是目前最流行的跨平台2D游戏引擎，<b>开源</b>，<b>免费</b>，MIT许可协议。</q>
                 <ul>
                     <li>主要由触控科技支持。</li>
-                    <li>现在主要是2D，3D也已推出。触控科技正在开发3D版的捕鱼达人。</li>
+                    <li>现在主要是2D，3D也已推出。2014年7月17日，3D版《捕鱼达人3》正式上线安卓和iOS平台</li>
                     <li>跨桌面、移动、Web三大平台。</li>
                 </ul>
             </div>
@@ -84,9 +84,8 @@
                     <li>Javascript版，使用原生Javascript提供了与Cocos2d-x完全相同的接口</li>
                     <li>代码对比：
                         <ul>
-                            <li><u>Cocos2d</u> => CCArray *array = CCArray::create(a, b);</li>
                             <li><u>Cocos2d-x</u> => vector&lt;CCSprite *&gt; array(a, b);</li>
-                            <li><u>Cocos2d-js</u> => var array = [a, b];</li>
+                            <li style="margin-top: 20px;"><u>Cocos2d-js</u> => var array = [a, b];</li>
                         </ul>
                     </li>
                     <li>全面支持桌面、移动和Web平台</li>
@@ -215,7 +214,7 @@ Cocos2d坐标系和OpenGL坐标系一样，原点为屏幕左下角，x向右，
             </div>
             
             
-            <div class="step" data-x="-4100" data-y="-2500" data-z="1000" data-rotate="180">
+            <div class="step" data-x="-2000" data-y="-2500" data-z="1000" data-rotate="0">
                 <h1 >内存管理-绕不过去的坎</h1>
                 <ul>
                     <li>Reference Count Management</li>
@@ -223,13 +222,12 @@ Cocos2d坐标系和OpenGL坐标系一样，原点为屏幕左下角，x向右，
                     <li>Retain,Release,Autorelease</li>
                     <li>CREATE_FUNC</li>
                     <li>new和autorelease, retain和release成对</li>
-
                 </ul>
 
             </div>
             
             
-            <div id="its-in-3d" class="step" data-x="-5100" data-y="-2500" data-z="1000" data-rotate="180">
+            <div id="its-in-3d" class="step" data-x="-1000" data-y="-2500" data-z="1000" data-rotate="0">
                 <h1 >内存管理－几个错误案例</h1>
                 <p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
 					auto obj = Scene::create();</br>
@@ -249,6 +247,29 @@ Cocos2d坐标系和OpenGL坐标系一样，原点为屏幕左下角，x向右，
 					obj->release();
 				</p>
 
+            </div>
+            
+            <div class="step" data-x="0" data-y="-2500" data-z="1000" data-rotate="0">
+                <h1 >物理引擎</h1>
+                				<p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
+物理引擎通过为刚性物体赋予真实的物理属性的方式来计算运动、旋转和碰撞反映。为每个游戏使用物理引擎并不是完全必要的—简单的“牛顿”物理（比如加速和减速）也可以在一定程度上通过编程或编写脚本来实现。然而，当游戏需要比较复杂的物体碰撞、滚动、滑动或者弹跳的时候（比如赛车类游戏或者保龄球游戏），通过编程的方法就比较困难了。
+				</p>
+				<h2 style="font-size: 30px; margin-top: 20px;">物体的分类</h2>
+				<ul style="font-size: 17px">
+					<li>动态物体(dynamic)，可以受力，可以碰撞，可以移动</li>
+                    <li>静态物体(static)，不可以受力，不能移动，参与碰撞</li>
+                    <li>运动学物体(kinematic)，不可以受力，但是可以移动，可以参与碰撞</li>
+<!--
+                    <li> Chipmunk & Box2D</li>
+                    <li>Retain,Release,Autorelease</li>
+                    <li>CREATE_FUNC</li>
+                    <li>new和autorelease, retain和release成对</li>
+-->
+                <ul>
+				<h2 style="font-size: 30px; margin-top: 20px;">物体的属性</h2>
+				<p style="background-color: rgba(238, 238, 238, 1);font-size: 16px;padding: 15px 40px 15px 40px;border-radius: 10px; margin-top:20px;"> 
+					                				质量、速度、转动惯量、角速度、位置、角度
+				</p>
             </div>
             
             
